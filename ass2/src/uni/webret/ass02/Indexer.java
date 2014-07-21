@@ -42,8 +42,8 @@ public class Indexer {
 			Analyzer analyzer = new StandardAnalyzer(Version.LUCENE_4_9);
 			IndexWriterConfig iwc = new IndexWriterConfig(Version.LUCENE_4_9, analyzer);
 			
-			//iwc.setOpenMode(OpenMode.CREATE_OR_APPEND);
-			iwc.setOpenMode(OpenMode.CREATE);
+			iwc.setOpenMode(OpenMode.CREATE_OR_APPEND);
+//			iwc.setOpenMode(OpenMode.CREATE);
 			
 			IndexWriter writer = new IndexWriter(dir, iwc);
 			indexDoc(writer, docDir);
@@ -83,9 +83,13 @@ public class Indexer {
 	        	Field pathField = new StringField("path", file.getPath(), Field.Store.YES);
 	        	doc.add(pathField);
 	        	
-	        	doc.add(new LongField("modified", file.lastModified(), Field.Store.NO));
+	        	Field tempField = new StringField("test", "my Test", Field.Store.YES);
+	        	doc.add(tempField);
+	        	
+	        	doc.add(new LongField("modified", file.lastModified(), Field.Store.YES));
 	        	
 	        	doc.add(new TextField("contents", new BufferedReader(new InputStreamReader(fis, StandardCharsets.UTF_8))));
+	        	
 	        	
 	        	if(writer.getConfig().getOpenMode() == OpenMode.CREATE){
 	        		writer.addDocument(doc);

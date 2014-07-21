@@ -6,6 +6,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.util.Vector;
 
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
@@ -24,7 +25,7 @@ public class Searcher {
 	static String index = "index";
 	static String field = "contents";
 	
-	public static void search(String[] args) throws Exception{
+	public static Vector<Document> search(String searchTerm) throws Exception{
 		
 		IndexReader reader = DirectoryReader.open(FSDirectory.open(new File(index)));
 		IndexSearcher searcher = new IndexSearcher(reader);
@@ -37,38 +38,20 @@ public class Searcher {
 		
 		String queries = null;
 		String queryString = null;
+
+		Query query = parser.parse(searchTerm);
+				
+		Vector<Document> docs = doPagingSearch(in, searcher, query, 100, false, false);
 		
-		while (true){
-			if(queries == null && queryString == null){
-				System.out.println("Enter query: ");
-			}
-			
-			String line = queryString != null ? queryString : in.readLine();
-			
-			if (line == null || line.length() == -1) {
-				break;
-			}
-			
-			line = line.trim();
-			if(line.length() == 0){
-				break;
-			}
-			
-			Query query = parser.parse(line);
-			
-//			searcher.search(query, null, 100);
-			
-			doPagingSearch(in, searcher, query, 100, false, false);
-			
-			if(queryString != null){
-				break;
-			}
-		}
 		reader.close();
+		
+		return docs;
 	}
 	
-	public static void doPagingSearch(BufferedReader in, IndexSearcher searcher, Query query, 
+	public static Vector<Document> doPagingSearch(BufferedReader in, IndexSearcher searcher, Query query, 
 			int hitsPerPage, boolean raw, boolean interactive) throws IOException{
+		
+		Vector<Document> result = new Vector<Document>();
 		
 		TopDocs results = searcher.search(query, 5 * hitsPerPage);
 		ScoreDoc[] hits = results.scoreDocs;
@@ -78,29 +61,28 @@ public class Searcher {
 		int start = 0;
 		int end = Math.min(nuTotalHits, hitsPerPage);
 		
-		while (true){
-			for (int i = start; i < end; i++) {
-				if (raw) {                              // output raw format
-					System.out.println("doc="+hits[i].doc+" score="+hits[i].score);
-					continue;
-				}
-				
-				Document doc = searcher.doc(hits[i].doc);
-				String path = doc.get("path");
-				if (path != null) {
-					System.out.println((i+1) + ". " + path);
-					String title = doc.get("title");
-					if (title != null) {
-						System.out.println("   Title: " + doc.get("title"));
-					}
-				} else {
-					System.out.println((i+1) + ". " + "No path for this document");
-			    }
-				              
-			}
-			if (!interactive || end == 0) {
-				break;
-			}
+		
+		for (int i = start; i < end; i++) {
+//			if (raw) {                              // output raw format
+//				System.out.println("doc="+hits[i].doc+" score="+hits[i].score);
+//				continue;
+//			}
+			
+//			Document doc = searcher.doc(hits[i].doc);
+//			String path = doc.get("path");
+//			if (path != null) {
+//				System.out.println((i+1) + ". " + path);
+//				String title = doc.get("title");
+//				if (title != null) {
+//					System.out.println("   Title: " + doc.get("title"));
+//				}
+//			} else {
+//				System.out.println((i+1) + ". " + "No path for this document");
+//		    }
+			result.add(searcher.doc(hits[i].doc));             
 		}
+		
+		return result;
+
 	}
 }
