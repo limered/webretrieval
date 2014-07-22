@@ -1,0 +1,1 @@
+{"tweet":{"id":491382365529587712,"time":1405989660000,"user":"CollegeHumor","content":"RT @jakeandamir: I'm the worst type of person to be on Tinder because I'm not only lazy and critical, I'm also mean and ugly."}}

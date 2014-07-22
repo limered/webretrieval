@@ -1,1 +1,1 @@
-{"tweet":{"time":Tue Jul 22 10:01:14 CEST 2014,"user":"WiiHomebrew","content":"Wii-U Systemupdate auf Version 5.1.0E verfügbar:    Heute hat Nintendo ein neues Systemupdate für Wii-U-Besitz... http:\/\/t.co\/INje87nbqQ"}}
+{"tweet":{"id":491493153644355584,"time":1406016074000,"user":"WiiHomebrew","content":"Wii-U Systemupdate auf Version 5.1.0E verfügbar:    Heute hat Nintendo ein neues Systemupdate für Wii-U-Besitz... http:\/\/t.co\/INje87nbqQ"}}

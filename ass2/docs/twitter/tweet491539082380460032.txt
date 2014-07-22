@@ -1,1 +1,1 @@
-{"tweet":{"time":Tue Jul 22 13:03:44 CEST 2014,"user":"mollstam","content":"I\u2019ve lost my coding mojo, Stack Overflow come back~"}}
+{"tweet":{"id":491539082380460032,"time":1406027024000,"user":"mollstam","content":"I\u2019ve lost my coding mojo, Stack Overflow come back~"}}

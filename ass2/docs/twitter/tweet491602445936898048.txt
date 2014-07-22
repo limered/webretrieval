@@ -1,0 +1,1 @@
+{"tweet":{"id":491602445936898048,"time":1406042131000,"user":"NowReport","content":"Delta cancels all flights to Israel: http:\/\/t.co\/W9w8mqDluO"}}

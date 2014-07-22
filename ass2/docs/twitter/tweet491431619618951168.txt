@@ -1,1 +1,1 @@
-{"tweet":{"time":Tue Jul 22 05:56:43 CEST 2014,"user":"mememolly","content":"RT @alexblagg: Maturity is knowing you don't need to read another 3,000-word meditation on what Kanye \"means\"."}}
+{"tweet":{"id":491431619618951168,"time":1406001403000,"user":"mememolly","content":"RT @alexblagg: Maturity is knowing you don't need to read another 3,000-word meditation on what Kanye \"means\"."}}

@@ -1,0 +1,1 @@
+{"tweet":{"id":491628158094176257,"time":1406048261000,"user":"CollegeHumor","content":"RT @streetseidell: \u201CYou\u2019re my best friend, Streeter,\u201D I said while moving my dog\u2019s mouth to give the illusion that it was her speaking."}}

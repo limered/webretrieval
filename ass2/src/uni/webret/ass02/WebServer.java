@@ -22,7 +22,7 @@ public class WebServer {
 		Server server = new Server(8080);
 		
 		URL warURL = WebServer.class.getClassLoader().getResource("");
-		System.out.println(warURL.toExternalForm());
+//		System.out.println(warURL.toExternalForm());
 		String warUrlString = warURL.toExternalForm();
 		WebAppContext webApp = new WebAppContext(warUrlString, "");
 		server.setHandler(webApp);
@@ -62,7 +62,7 @@ public class WebServer {
 		private String makeResultItem(Document doc){
 			StringBuilder sb = new StringBuilder();
 			sb.append("<div class='result'>");
-			sb.append("<a class='doc-path' href='" + doc.get("link") + "' target='_blank'>" + doc.get("link") + "</a>");
+			sb.append("<a class='doc-path' href='" + doc.get("link") + "' target='_blank'>" + doc.get("linkText") + "</a>");
 			sb.append("<div class='doc-modified'>" + doc.get("date") + "</div>");
 			sb.append("<div class='doc-content'>" + doc.get("shortDecr") + "</div>");
 			sb.append("</div>");

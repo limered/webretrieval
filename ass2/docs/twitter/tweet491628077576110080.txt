@@ -1,0 +1,1 @@
+{"tweet":{"id":491628077576110080,"time":1406048242000,"user":"CollegeHumor","content":"RT @FuckABag: Guest: \"where's the bathroom?\"\n\nMe: http:\/\/t.co\/KLOp3pWo9i"}}

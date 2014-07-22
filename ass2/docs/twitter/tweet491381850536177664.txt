@@ -1,0 +1,1 @@
+{"tweet":{"id":491381850536177664,"time":1405989537000,"user":"CollegeHumor","content":"RT @jongabrus: I just talked to my dog for like 20 minutes about a movie idea. He cant remember it either. #thistweetbroughttoyoubyweed"}}

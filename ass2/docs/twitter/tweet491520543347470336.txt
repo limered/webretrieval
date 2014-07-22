@@ -1,1 +1,1 @@
-{"tweet":{"time":Tue Jul 22 11:50:04 CEST 2014,"user":"gerritmueller","content":"Der Dell hat ne Delle (@burschie voice) http:\/\/t.co\/pPLUKtLHvi"}}
+{"tweet":{"id":491520543347470336,"time":1406022604000,"user":"gerritmueller","content":"Der Dell hat ne Delle (@burschie voice) http:\/\/t.co\/pPLUKtLHvi"}}

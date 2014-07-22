@@ -18,6 +18,8 @@ public class TwitterUpdater extends Thread{
 	static String path = "docs/twitter";
 	static boolean running = true;
 	
+	static int updateTime = 15 * 60 * 1000;
+	
 	@SuppressWarnings("unchecked")
 	public void run(){
 		while(running){
@@ -30,17 +32,19 @@ public class TwitterUpdater extends Thread{
 			TwitterFactory tf = new TwitterFactory(cb.build());
 			Twitter twitter = tf.getInstance();
 			
-			for (int i = 1; i <= 5; i++){
+			for (int i = 1; i <= 2; i++){
 				List<Status> stati = null;
 				try{
 					stati = twitter.getHomeTimeline(new Paging(i));
 				}catch (TwitterException e){
+					e.getMessage();
 					e.printStackTrace();
 				}
 				for (Status st : stati){
 					JSONObject tweet = new JSONObject();
 					JSONObject contents = new JSONObject();
 					
+					contents.put("id", st.getId());
 					contents.put("time", st.getCreatedAt().getTime());
 					contents.put("user", st.getUser().getScreenName());
 					contents.put("content", st.getText());
@@ -55,8 +59,8 @@ public class TwitterUpdater extends Thread{
 				}
 			}
 			try{
-//				Indexer.index();
-				sleep(900000);
+				Indexer.index();
+				sleep(updateTime);
 			}catch (InterruptedException e){
 				e.printStackTrace();
 			}
