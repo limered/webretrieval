@@ -1,1 +1,1 @@
-{"tweet":{"time":Tue Jul 22 05:43:13 CEST 2014,"user":"CollegeHumor","content":"RT @FuckABag: The heart wants what the heart wants...\n\nSame goes for the pussy."}}
+{"tweet":{"id":491428224966987776,"time":1406000593000,"user":"CollegeHumor","content":"RT @FuckABag: The heart wants what the heart wants...\n\nSame goes for the pussy."}}

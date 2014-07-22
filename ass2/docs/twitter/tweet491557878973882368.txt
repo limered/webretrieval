@@ -1,1 +1,1 @@
-{"tweet":{"time":Tue Jul 22 14:18:25 CEST 2014,"user":"jeb_","content":"A banner fit for a king! ;) http:\/\/t.co\/gs4RTPEywF"}}
+{"tweet":{"id":491557878973882368,"time":1406031505000,"user":"jeb_","content":"A banner fit for a king! ;) http:\/\/t.co\/gs4RTPEywF"}}

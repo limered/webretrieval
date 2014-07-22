@@ -1,1 +1,1 @@
-{"tweet":{"time":Tue Jul 22 11:02:24 CEST 2014,"user":"notch","content":"RT @Demruth: \u201CThis game didn\u2019t do X, and look how well that did!\u201D is not an argument that you never need to do X."}}
+{"tweet":{"id":491508547369598976,"time":1406019744000,"user":"notch","content":"RT @Demruth: \u201CThis game didn\u2019t do X, and look how well that did!\u201D is not an argument that you never need to do X."}}

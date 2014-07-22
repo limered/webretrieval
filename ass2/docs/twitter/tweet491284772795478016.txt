@@ -1,0 +1,1 @@
+{"tweet":{"id":491284772795478016,"time":1405966392000,"user":"CollegeHumor","content":"RT @FuckABag: Is this weird? http:\/\/t.co\/RclxFqyXFU"}}

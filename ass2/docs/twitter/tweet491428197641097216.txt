@@ -1,1 +1,1 @@
-{"tweet":{"time":Tue Jul 22 05:43:07 CEST 2014,"user":"CollegeHumor","content":"RT @FuckABag: Some people on instagram be like... http:\/\/t.co\/4Uo65xXTpE"}}
+{"tweet":{"id":491428197641097216,"time":1406000587000,"user":"CollegeHumor","content":"RT @FuckABag: Some people on instagram be like... http:\/\/t.co\/4Uo65xXTpE"}}

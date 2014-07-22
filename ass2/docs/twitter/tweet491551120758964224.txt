@@ -1,1 +1,1 @@
-{"tweet":{"time":Tue Jul 22 13:51:34 CEST 2014,"user":"gerritmueller","content":"RT @H8t0r: @gerritmueller opfer!"}}
+{"tweet":{"id":491551120758964224,"time":1406029894000,"user":"gerritmueller","content":"RT @H8t0r: @gerritmueller opfer!"}}

@@ -1,0 +1,1 @@
+{"tweet":{"id":491382114664087552,"time":1405989600000,"user":"CollegeHumor","content":"RT @halliecantor: if only dating were more like applying for jobs. id still be bad at it but at least i could blame the economy"}}

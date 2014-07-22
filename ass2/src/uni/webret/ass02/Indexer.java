@@ -10,7 +10,6 @@ import java.nio.charset.StandardCharsets;
 
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.TokenStream;
-import org.apache.lucene.analysis.core.SimpleAnalyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
@@ -116,14 +115,17 @@ public class Indexer {
 	        		Field typeField = new StringField("type", "twitter", Field.Store.YES);
 	        		doc.add(typeField);
 	        		
-	        		Field linkField = new StringField("link", "http://www.twitter.com/" + twitter.get("user"), Field.Store.YES);
+	        		Field linkField = new StringField("link", "http://www.twitter.com/" + twitter.get("user") + "/status/" + twitter.get("id"), Field.Store.YES);
 	        		doc.add(linkField);
+	        		
+	        		Field linkTextField = new StringField("linkText", (String)twitter.get("user"), Field.Store.YES);
+	        		doc.add(linkTextField);
 	        		
 	        		Field dateField = new LongField("date", (Long)twitter.get("time"), Field.Store.YES);
 	        		doc.add(dateField);
 	        		
 	        		String content = (String)twitter.get("content");
-	        		Field shortDesField = new StringField("shortDecr", (content.length() > 50) ? content.substring(0, 100) : content, Field.Store.YES);
+	        		Field shortDesField = new StringField("shortDecr", (content.length() > 100) ? content.substring(0, 100) : content, Field.Store.YES);
 	        		doc.add(shortDesField);
 	        		
 	        		content = content.replaceAll("#", " ");
