@@ -45,7 +45,6 @@ public class WebServer {
 			try {
 				 result = Searcher.search(inStr);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			

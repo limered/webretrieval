@@ -4,6 +4,8 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.List;
 
+import org.json.simple.JSONObject;
+
 import twitter4j.Paging;
 import twitter4j.Status;
 import twitter4j.Twitter;
@@ -12,32 +14,51 @@ import twitter4j.TwitterFactory;
 import twitter4j.conf.ConfigurationBuilder;
 
 
-public class TwitterUpdater {
+public class TwitterUpdater extends Thread{
 	static String path = "docs/twitter";
+	static boolean running = true;
 	
-	public static void update() throws TwitterException{
-		ConfigurationBuilder cb = new ConfigurationBuilder();
-		cb.setDebugEnabled(true)
-		  .setOAuthConsumerKey("*****************")
-		  .setOAuthConsumerSecret("************************")
-		  .setOAuthAccessToken("**************************************")
-		  .setOAuthAccessTokenSecret("********************************");
-		TwitterFactory tf = new TwitterFactory(cb.build());
-		Twitter twitter = tf.getInstance();
-		
-		for (int i = 1; i <= 5; i++){
-			List<Status> stati = twitter.getHomeTimeline(new Paging(i));
-			for (Status st : stati){
-				try {
-					PrintWriter out = new PrintWriter(path + "/tweet" + st.getId() + ".txt");
-					out.println("<tweet><time>" + st.getCreatedAt() + "</time>");
-					out.println("<user>" + st.getUser().getScreenName() + "</user>");
-					out.println("<content>" + st.getText() + "</content></tweet>");
-					out.close();
-				} catch (FileNotFoundException e) {
-					// TODO Auto-generated catch block
+	@SuppressWarnings("unchecked")
+	public void run(){
+		while(running){
+			ConfigurationBuilder cb = new ConfigurationBuilder();
+			cb.setDebugEnabled(true)
+			  .setOAuthConsumerKey("pgJ4qXmL3gQDogVc6w5JQ8eiu")
+			  .setOAuthConsumerSecret("Thrqj3kWa2ckuIARAhv8qQqyaLM5m917KNDdxtPDZYxdbkuGOJ")
+			  .setOAuthAccessToken("49376044-vvVudJAKzjr3MIimlzE3U2I7HplQ871dDdb6gnQBu")
+			  .setOAuthAccessTokenSecret("eVXKgezjignYlChnwgILAhxgao2lVhHr8rwV8c2DQcglJ");
+			TwitterFactory tf = new TwitterFactory(cb.build());
+			Twitter twitter = tf.getInstance();
+			
+			for (int i = 1; i <= 5; i++){
+				List<Status> stati = null;
+				try{
+					stati = twitter.getHomeTimeline(new Paging(i));
+				}catch (TwitterException e){
 					e.printStackTrace();
 				}
+				for (Status st : stati){
+					JSONObject tweet = new JSONObject();
+					JSONObject contents = new JSONObject();
+					
+					contents.put("time", st.getCreatedAt());
+					contents.put("user", st.getUser().getScreenName());
+					contents.put("content", st.getText());
+					tweet.put("tweet", contents);
+					try {
+						PrintWriter out = new PrintWriter(path + "/tweet" + st.getId() + ".txt");
+						out.println(tweet.toString());
+						out.close();
+					} catch (FileNotFoundException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+			try{
+				Indexer.index();
+				sleep(900000);
+			}catch (InterruptedException e){
+				e.printStackTrace();
 			}
 		}
 	}
