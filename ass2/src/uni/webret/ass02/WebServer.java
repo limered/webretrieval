@@ -62,9 +62,9 @@ public class WebServer {
 		private String makeResultItem(Document doc){
 			StringBuilder sb = new StringBuilder();
 			sb.append("<div class='result'>");
-			sb.append("<a class='doc-path' href='" + doc.get("path") + "' target='_blank'>" + doc.get("path") + "</a>");
-			sb.append("<div class='doc-modified'>" + doc.get("test") + "</div>");
-			sb.append("<div class='doc-content'>" + doc.get("modified") + "</div>");
+			sb.append("<a class='doc-path' href='" + doc.get("link") + "' target='_blank'>" + doc.get("link") + "</a>");
+			sb.append("<div class='doc-modified'>" + doc.get("date") + "</div>");
+			sb.append("<div class='doc-content'>" + doc.get("shortDecr") + "</div>");
 			sb.append("</div>");
 			return sb.toString();
 		}

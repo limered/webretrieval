@@ -41,7 +41,7 @@ public class TwitterUpdater extends Thread{
 					JSONObject tweet = new JSONObject();
 					JSONObject contents = new JSONObject();
 					
-					contents.put("time", st.getCreatedAt());
+					contents.put("time", st.getCreatedAt().getTime());
 					contents.put("user", st.getUser().getScreenName());
 					contents.put("content", st.getText());
 					tweet.put("tweet", contents);
@@ -55,7 +55,7 @@ public class TwitterUpdater extends Thread{
 				}
 			}
 			try{
-				Indexer.index();
+//				Indexer.index();
 				sleep(900000);
 			}catch (InterruptedException e){
 				e.printStackTrace();

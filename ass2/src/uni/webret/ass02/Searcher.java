@@ -9,6 +9,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Vector;
 
 import org.apache.lucene.analysis.Analyzer;
+import org.apache.lucene.analysis.core.SimpleAnalyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.index.DirectoryReader;
@@ -35,11 +36,10 @@ public class Searcher {
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in, StandardCharsets.UTF_8));
 		
 		QueryParser parser = new QueryParser(Version.LUCENE_4_9, field, analyzer);
-		
-		String queries = null;
-		String queryString = null;
 
 		Query query = parser.parse(searchTerm);
+		
+//		System.out.println(query.toString());
 				
 		Vector<Document> docs = doPagingSearch(in, searcher, query, 100, false, false);
 		
@@ -79,7 +79,8 @@ public class Searcher {
 //			} else {
 //				System.out.println((i+1) + ". " + "No path for this document");
 //		    }
-			result.add(searcher.doc(hits[i].doc));             
+			result.add(searcher.doc(hits[i].doc));
+//			System.out.println(hits[i].doc);
 		}
 		
 		return result;
