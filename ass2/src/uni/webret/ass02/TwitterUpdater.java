@@ -23,6 +23,7 @@ public class TwitterUpdater extends Thread{
 	@SuppressWarnings("unchecked")
 	public void run(){
 		while(running){
+			System.out.println("Twitter update...");
 			ConfigurationBuilder cb = new ConfigurationBuilder();
 			cb.setDebugEnabled(true)
 			  .setOAuthConsumerKey("pgJ4qXmL3gQDogVc6w5JQ8eiu")
@@ -37,7 +38,6 @@ public class TwitterUpdater extends Thread{
 				try{
 					stati = twitter.getHomeTimeline(new Paging(i));
 				}catch (TwitterException e){
-					e.getMessage();
 					e.printStackTrace();
 				}
 				for (Status st : stati){
@@ -58,8 +58,12 @@ public class TwitterUpdater extends Thread{
 					}
 				}
 			}
+			
+			System.out.println("Twitter update done...indexing");
+			
 			try{
 				Indexer.index();
+				System.out.println("Twitter indexing done...sleeping");
 				sleep(updateTime);
 			}catch (InterruptedException e){
 				e.printStackTrace();

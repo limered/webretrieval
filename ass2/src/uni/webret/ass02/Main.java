@@ -6,6 +6,12 @@ public class Main {
 		
 		TwitterUpdater twitter = new TwitterUpdater();
 		twitter.start();
+		
+		RedditUpdater reddit = new RedditUpdater();
+		reddit.start();
+		
+		RSSUpdater rss = new RSSUpdater();
+		rss.start();
 
 		Indexer.index();
 		

@@ -60,13 +60,38 @@ public class WebServer {
             response.setStatus(HttpServletResponse.SC_OK);
         }
 		private String makeResultItem(Document doc){
-			StringBuilder sb = new StringBuilder();
-			sb.append("<div class='result'>");
-			sb.append("<a class='doc-path' href='" + doc.get("link") + "' target='_blank'>" + doc.get("linkText") + "</a>");
-			sb.append("<div class='doc-modified'>" + doc.get("date") + "</div>");
-			sb.append("<div class='doc-content'>" + doc.get("shortDecr") + "</div>");
-			sb.append("</div>");
-			return sb.toString();
+			switch (doc.get("type")){
+			case "twitter":{
+				StringBuilder sb = new StringBuilder();
+				sb.append("<div class='result twitter'>");
+				sb.append("<a class='doc-path' href='" + doc.get("link") + "' target='_blank'>" + doc.get("linkText") + "</a>");
+				sb.append("<div class='doc-modified'>" + doc.get("date") + "</div>");
+				sb.append("<div class='doc-content'>" + doc.get("shortDecr") + "</div>");
+				sb.append("</div>");
+				return sb.toString();
+			}
+			case "reddit":{
+				StringBuilder sb = new StringBuilder();
+				sb.append("<div class='result reddit'>");
+				sb.append("<a class='doc-path' href='" + doc.get("link") + "' target='_blank'>" + doc.get("linkText") + "</a>");
+				sb.append("<div class='doc-modified'>" + doc.get("date") + "</div>");
+				sb.append("<div class='doc-subreddit'>Subreddit: " + doc.get("subreddit") + "</div>");
+				sb.append("<a class='doc-comments' href='" + doc.get("clink") + "' target='_blank'>comments</a>");
+				sb.append("</div>");
+				return sb.toString();
+			}
+			case "rssfeed":{
+				StringBuilder sb = new StringBuilder();
+				sb.append("<div class='result rssfeed'>");
+				sb.append("<a class='doc-path' href='" + doc.get("link") + "' target='_blank'>" + doc.get("title") + "</a>");
+				sb.append("<div class='doc-content'>" + doc.get("shortDecr") + "</div>");
+				sb.append("<a class='doc-comments' href='" + doc.get("website") + "' target='_blank'>Source: " + doc.get("website") + "</a>");
+				sb.append("</div>");
+				return sb.toString();
+			}
+			}
+			
+			return " ";
 		}
 	}
 }

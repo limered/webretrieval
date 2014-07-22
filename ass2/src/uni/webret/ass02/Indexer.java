@@ -48,8 +48,8 @@ public class Indexer {
 			Analyzer analyzer = new StandardAnalyzer(Version.LUCENE_4_9);
 			IndexWriterConfig iwc = new IndexWriterConfig(Version.LUCENE_4_9, analyzer);
 			
-//			iwc.setOpenMode(OpenMode.CREATE_OR_APPEND);
-			iwc.setOpenMode(OpenMode.CREATE);
+			iwc.setOpenMode(OpenMode.CREATE_OR_APPEND);
+//			iwc.setOpenMode(OpenMode.CREATE);
 			
 			IndexWriter writer = new IndexWriter(dir, iwc);
 			indexDoc(writer, docDir);
@@ -105,10 +105,8 @@ public class Indexer {
 	        	
 	        	Field pathField = new StringField("path", file.getPath(), Field.Store.YES);
 	        	doc.add(pathField);
-	        	
-	        	JSONObject contentObject = (JSONObject)jso.get("tweet"); 
-	        	
-	        	if(contentObject != null){
+	        		        	
+	        	if(jso.get("tweet") != null){
 	        		//twitter file
 	        		JSONObject twitter = (JSONObject)jso.get("tweet");
 	        		
@@ -125,7 +123,7 @@ public class Indexer {
 	        		doc.add(dateField);
 	        		
 	        		String content = (String)twitter.get("content");
-	        		Field shortDesField = new StringField("shortDecr", (content.length() > 100) ? content.substring(0, 100) : content, Field.Store.YES);
+	        		Field shortDesField = new StringField("shortDecr", (content.length() > 100) ? content.substring(0, 100) + "..." : content, Field.Store.YES);
 	        		doc.add(shortDesField);
 	        		
 	        		content = content.replaceAll("#", " ");
@@ -134,15 +132,55 @@ public class Indexer {
 	        		Field searchField = new TextField("contents", new BufferedReader(new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8)));
 	        		doc.add(searchField);
 	        		
-	        		
 	        	}else if (jso.get("reddit") != null){
 	        		//reddit
+	        		JSONObject reddit = (JSONObject)jso.get("reddit");
 	        		
+	        		Field typeField = new StringField("type", "reddit", Field.Store.YES);
+	        		doc.add(typeField);
+	        		
+	        		Field cLinkField = new StringField("clink", "http://www.reddit.com" + reddit.get("clink"), Field.Store.YES);
+	        		doc.add(cLinkField);
+	        		
+	        		Field linkField = new StringField("link", (String)reddit.get("link"), Field.Store.YES);
+	        		doc.add(linkField);
+	        		
+	        		Field subField = new StringField("subreddit", (String)reddit.get("subreddit"), Field.Store.YES);
+	        		doc.add(subField);
+	        		
+	        		Field linkTextField = new StringField("linkText", (String)reddit.get("title"), Field.Store.YES);
+	        		doc.add(linkTextField);
+	        		
+	        		Field dateField = new LongField("date", new Double((double) reddit.get("time")).longValue(), Field.Store.YES);
+	        		doc.add(dateField);
+	        		
+	        		Field searchField = new TextField("contents", new BufferedReader(new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8)));
+	        		doc.add(searchField);
 	        	}else{
 	        		//rss file
+	        		JSONObject rss = (JSONObject)jso.get("rssfeed");
 	        		
+	        		Field typeField = new StringField("type", "rssfeed", Field.Store.YES);
+	        		doc.add(typeField);
+	        		
+	        		Field linkField = new StringField("link", (String)rss.get("link"), Field.Store.YES);
+	        		doc.add(linkField);
+	        		
+	        		Field titleField = new StringField("title", (String)rss.get("title"), Field.Store.YES);
+	        		doc.add(titleField);
+	        		
+	        		Field feedField = new StringField("website", (String)rss.get("website"), Field.Store.YES);
+	        		doc.add(feedField);
+	        		
+	        		String content = (rss.get("text") != null) ? (String)rss.get("text") : "";
+	        		
+	        		Field shortDesField = new StringField("shortDecr", (content.length() > 300) ? content.substring(0, 300) + "..." : content, Field.Store.YES);
+	        		doc.add(shortDesField);
+	        		
+	        		Field searchField = new TextField("contents", new BufferedReader(new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8)));
+	        		doc.add(searchField);
 	        	}
-
+	        	
 	        	doc.add(new LongField("modified", file.lastModified(), Field.Store.NO));
 	        	
 	        	if(writer.getConfig().getOpenMode() == OpenMode.CREATE){
