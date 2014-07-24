@@ -1,0 +1,1 @@
+{"reddit":{"clink":"\/r\/truegaming\/comments\/2a5kit\/explain_like_im_5_how_some_more_graphically\/","link":"http:\/\/www.reddit.com\/r\/truegaming\/comments\/2a5kit\/explain_like_im_5_how_some_more_graphically\/","time":1.404836547E9,"title":"Explain like I'm 5, how some more graphically intensive games can run smoother than less","subreddit":"truegaming"}}

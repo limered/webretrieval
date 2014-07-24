@@ -1,0 +1,1 @@
+{"reddit":{"clink":"\/r\/Gaming4Gamers\/comments\/2bfg1y\/how_to_build_your_own_game_boy_with_a_raspberry\/","link":"http:\/\/www.polygon.com\/2014\/7\/22\/5926083\/game-boy-raspberry-pi","time":1.406061225E9,"title":"How to build your own [Game Boy] with a [Raspberry Pi] and a hot glue gun","subreddit":"Gaming4Gamers"}}

@@ -1,0 +1,1 @@
+{"reddit":{"clink":"\/r\/Gaming4Gamers\/comments\/2b2gef\/google_will_stop_calling_games_free_when_they\/","link":"http:\/\/www.theverge.com\/2014\/7\/18\/5915415\/google-adding-in-app-purchase-protections-european-commission","time":1.40570857E9,"title":"[Google] will stop calling games 'free' when they offer in-app purchases","subreddit":"Gaming4Gamers"}}

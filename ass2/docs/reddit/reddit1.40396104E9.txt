@@ -1,0 +1,1 @@
+{"reddit":{"clink":"\/r\/WebGames\/comments\/29bi99\/stinkoman_20x6_a_megamantype_game_from_the\/","link":"http:\/\/www.homestarrunner.com\/stinkogame\/v7\/stinkogame.html","time":1.40396104E9,"title":"Stinkoman 20X6: A Megaman-type game from the creators of Homestar Runner","subreddit":"WebGames"}}

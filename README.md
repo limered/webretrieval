@@ -15,6 +15,7 @@ APACHE-Client (used for reddit): http://hc.apache.org/downloads.cgi
 
 APACHE-Commons-IO (used for reddit): http://commons.apache.org/proper/commons-io/download_io.cgi
 
-RSS: http://www.sauronsoftware.it/projects/feed4j/
+/* RSS: http://www.sauronsoftware.it/projects/feed4j/ */
+new RSS: http://yarfraw.sourceforge.net/
 
 JSON: https://code.google.com/p/json-simple/

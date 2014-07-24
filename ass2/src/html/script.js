@@ -9,6 +9,17 @@ function search(evt){
 	var ajaxUrl = baseURL + "?" + searchString;
 	$('#result-area').html('');
 	$.ajax(ajaxUrl).done(function(res){
-		$('#result-area').append(res);
+		resultObject = JSON.parse(res);
+		if(resultObject.success){
+			// buildResults
+			$('#result-area').append(resultObject);
+		}else{
+			showNoResultsMessage(resultObject.query);
+		}
 	});
+}
+
+function showNoResultsMessage(query){
+	var text = "Sorry, there are no results for: " + query;
+	$('#info-area').html(text);
 }

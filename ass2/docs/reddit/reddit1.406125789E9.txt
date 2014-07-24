@@ -1,0 +1,1 @@
+{"reddit":{"clink":"\/r\/Games\/comments\/2bhx8y\/ccp_introduces_project_legion_an_online_fps_set\/","link":"http:\/\/www.pcgamer.com\/previews\/project-legion-first-look\/","time":1.406125789E9,"title":"CCP Introduces Project Legion, an online FPS set in the EVE Universe.","subreddit":"Games"}}

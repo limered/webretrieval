@@ -36,9 +36,7 @@ public class Searcher {
 		QueryParser parser = new QueryParser(Version.LUCENE_4_9, field, analyzer);
 
 		Query query = parser.parse(searchTerm);
-		
-//		System.out.println(query.toString());
-				
+						
 		Vector<Document> docs = doPagingSearch(in, searcher, query, 100, false, false);
 		
 		reader.close();

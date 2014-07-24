@@ -1,0 +1,1 @@
+{"tweet":{"id":491960210828042241,"time":1406127429000,"user":"CollegeHumor","content":"RT @jakeandamir: \"Smart Cars\" were named by a sarcastic focus group."}}

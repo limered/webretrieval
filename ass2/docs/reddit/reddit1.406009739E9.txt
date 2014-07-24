@@ -1,0 +1,1 @@
+{"reddit":{"clink":"\/r\/gamingpc\/comments\/2bdek1\/rumor_haswelle_detaisl_emerge_5820k_will_be\/","link":"http:\/\/www.legitreviews.com\/intel-core-i7-5820k-i7-5930k-i7-5960x-processor-details-emerge_142780","time":1.406009739E9,"title":"[Rumor] Haswell-E detaisl emerge, 5820k will be limited to 28 PCI lanes.","subreddit":"gamingpc"}}

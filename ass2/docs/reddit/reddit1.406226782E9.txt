@@ -1,0 +1,1 @@
+{"reddit":{"clink":"\/r\/Games\/comments\/2bm8lw\/gamasutra_an_architectural_approach_to_level\/","link":"http:\/\/www.gamasutra.com\/blogs\/ChristopherTotten\/20140711\/220802\/Excerpts_from_An_Architectural_Approach_to_Level_Design.php","time":1.406226782E9,"title":"Gamasutra: An Architectural Approach to Level Design","subreddit":"Games"}}

@@ -1,0 +1,1 @@
+{"tweet":{"id":492386318371282944,"time":1406229021000,"user":"CollegeHumor","content":"#CHLiveLA is Aug 5th @ucbtla WITH @heathercampbell @eliotglazer @poregan @OnassisComedy http:\/\/t.co\/VnDoNhOxKi http:\/\/t.co\/MsouIqifFV"}}

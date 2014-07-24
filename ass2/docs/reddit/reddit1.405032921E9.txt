@@ -1,0 +1,1 @@
+{"reddit":{"clink":"\/r\/gamingpc\/comments\/2adiqs\/i_have_a_prebuilt_but_finally_have_funds_to\/","link":"http:\/\/www.reddit.com\/r\/gamingpc\/comments\/2adiqs\/i_have_a_prebuilt_but_finally_have_funds_to\/","time":1.405032921E9,"title":"I have a prebuilt but finally have funds to upgrade my graphics. How will I know if the card will fit into my case?","subreddit":"gamingpc"}}

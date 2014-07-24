@@ -1,0 +1,1 @@
+{"tweet":{"id":491713621286985728,"time":1406068637000,"user":"CollegeHumor","content":"RT @DanHopp: Aren't we all? http:\/\/t.co\/GVyWkKGkyF"}}

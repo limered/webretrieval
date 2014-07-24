@@ -1,0 +1,1 @@
+{"tweet":{"id":491679710297214977,"time":1406060552000,"user":"CollegeHumor","content":"RT @DanHopp: The year is 3000XX. Humans speak by solar powered Ultrathought but Voting is still done on punchcards counted by 80-yr-old sch\u2026"}}

@@ -1,0 +1,1 @@
+{"reddit":{"clink":"\/r\/IndieGaming\/comments\/2bic9f\/average_salary_for_fulltime_indie_game_devs_is\/","link":"http:\/\/www.gamasutra.com\/view\/news\/221630\/6_key_points_from_the_2014_Indie_Salary_Report.php","time":1.406134154E9,"title":"Average salary for fulltime indie game devs is $11,782\/year. 57% make less than $500","subreddit":"IndieGaming"}}

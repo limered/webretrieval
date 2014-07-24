@@ -1,0 +1,1 @@
+{"tweet":{"id":492332756442316800,"time":1406216250000,"user":"CollegeHumor","content":"RT @dorkly: The Problem With Chain-Chomps - Dorkly Bits: http:\/\/t.co\/CSdT4yJHVg http:\/\/t.co\/JSiul7RS0u"}}

@@ -1,0 +1,1 @@
+{"tweet":{"id":491938492595703808,"time":1406122251000,"user":"gerritmueller","content":"RT @PoppyPuff: Französische Supermarktkette verkauft \u201CHässliches Obst und Gemüse\u201D http:\/\/t.co\/cksNmVYX2b"}}

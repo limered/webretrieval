@@ -1,0 +1,1 @@
+{"reddit":{"clink":"\/r\/gamingpc\/comments\/2a3cmm\/two_radeon_gpus_for_z97k\/","link":"http:\/\/www.reddit.com\/r\/gamingpc\/comments\/2a3cmm\/two_radeon_gpus_for_z97k\/","time":1.404774213E9,"title":"Two Radeon GPU's for Z97-K","subreddit":"gamingpc"}}

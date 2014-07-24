@@ -1,0 +1,1 @@
+{"reddit":{"clink":"\/r\/gamingpc\/comments\/29hjew\/switch_between_multimonitor_and_tvprojector_using\/","link":"http:\/\/www.realtimesoft.com\/ultramon\/tour\/display_profiles.asp","time":1.404148179E9,"title":"Switch between multimonitor and tv\/projector using Ultramon's Display Profiles","subreddit":"gamingpc"}}

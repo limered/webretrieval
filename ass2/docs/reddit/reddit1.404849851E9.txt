@@ -1,0 +1,1 @@
+{"reddit":{"clink":"\/r\/gamingpc\/comments\/2a68ww\/what_is_my_actual_cpu_temperature\/","link":"http:\/\/www.reddit.com\/r\/gamingpc\/comments\/2a68ww\/what_is_my_actual_cpu_temperature\/","time":1.404849851E9,"title":"What is my actual CPU temperature?","subreddit":"gamingpc"}}

@@ -1,0 +1,1 @@
+{"reddit":{"clink":"\/r\/WebGames\/comments\/298jfp\/nuclear_chess_an_explosive_chess_variant\/","link":"http:\/\/karlb.github.io\/nuclearchess\/","time":1.403873519E9,"title":"Nuclear Chess, an explosive chess variant","subreddit":"WebGames"}}

@@ -1,0 +1,1 @@
+{"reddit":{"clink":"\/r\/gamingpc\/comments\/2aflpz\/input_lag_and_problems_on_wireless_mouse\/","link":"http:\/\/www.reddit.com\/r\/gamingpc\/comments\/2aflpz\/input_lag_and_problems_on_wireless_mouse\/","time":1.405093324E9,"title":"Input lag and problems on wireless mouse","subreddit":"gamingpc"}}

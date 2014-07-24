@@ -1,0 +1,1 @@
+{"tweet":{"id":492417773222776836,"time":1406236520000,"user":"jnkboy","content":"It's warm as hell in Stockholm at night and everyone is sleeping with their windows open? Unleash the street sweepers!"}}

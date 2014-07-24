@@ -1,0 +1,1 @@
+{"reddit":{"clink":"\/r\/IndieGaming\/comments\/2bg3rf\/mendels_farm_beta_v02_this_is_our_first_open_beta\/","link":"http:\/\/www.indiedb.com\/games\/mendels-farm","time":1.406074247E9,"title":"Mendel's Farm Beta v.02 - This is our first open Beta and would love some feedback on our game!","subreddit":"IndieGaming"}}

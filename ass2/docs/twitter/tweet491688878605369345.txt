@@ -1,0 +1,1 @@
+{"tweet":{"id":491688878605369345,"time":1406062738000,"user":"CollegeHumor","content":"RT @eaxford: targeted ads really get me http:\/\/t.co\/4azLxVxaL8"}}

@@ -1,0 +1,1 @@
+{"reddit":{"clink":"\/r\/WebGames\/comments\/2ac2kh\/fish_inc_a_small_incremental_game_with_a_finish_i\/","link":"http:\/\/www.kongregate.com\/games\/dotacreepy\/fish-inc","time":1.405002869E9,"title":"FISH Inc. A small incremental game with a finish. I made this game and finished it today, all feedback welcome!","subreddit":"WebGames"}}

@@ -1,0 +1,1 @@
+{"reddit":{"clink":"\/r\/IndieGaming\/comments\/2bkd1y\/kings_corpses_is_live_on_the_app_store_a\/","link":"https:\/\/itunes.apple.com\/us\/app\/kings-corpses\/id897817055?ls=1&amp;mt=8","time":1.406175015E9,"title":"Kings &amp; Corpses is live on the App Store, a Chess-like with zombies!","subreddit":"IndieGaming"}}

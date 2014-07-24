@@ -1,0 +1,1 @@
+{"reddit":{"clink":"\/r\/gamernews\/comments\/2bkyzv\/gog_now_officially_support_linux_games\/","link":"http:\/\/www.gamingonlinux.com\/articles\/gog-com-now-officially-support-linux-games.4076","time":1.406196095E9,"title":"GOG Now Officially Support Linux Games","subreddit":"gamernews"}}

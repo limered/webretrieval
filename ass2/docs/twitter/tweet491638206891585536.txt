@@ -1,0 +1,1 @@
+{"tweet":{"id":491638206891585536,"time":1406050657000,"user":"CollegeHumor","content":"RT @streetseidell: You probably don\u2019t know this unless you studied history but Cap\u2019n Crunch captured and executed over 400 Barbary pirates"}}

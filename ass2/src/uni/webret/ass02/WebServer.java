@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.lucene.document.Document;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.webapp.WebAppContext;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 
 public class WebServer {
 	
@@ -36,6 +38,7 @@ public class WebServer {
 	@SuppressWarnings("serial")
 	public static class HelloServlet extends HttpServlet{
 		
+		@SuppressWarnings("unchecked")
 		@Override
         protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
         {
@@ -51,47 +54,74 @@ public class WebServer {
 			response.setContentType("text/html");
             PrintWriter out = response.getWriter();
             
-            out.append("<h2>Results for: " + inStr + "</h2>");
+            JSONObject resultObject = new JSONObject();
+            resultObject.put("query", inStr);
+            
+            if(result.size() == 0){
+            	resultObject.put("success", false);
+            }else{
+            	resultObject.put("success", true);
+            }
+            
+            JSONArray items = new JSONArray();
             
             for (int i = 0; i < result.size(); i++){
-            	out.append(makeResultItem(result.get(i)));
+            	items.add(makeResultItem(result.get(i)));
             }
+            
+            resultObject.put("items", items);
+            
+            out.append(resultObject.toString());
             
             response.setStatus(HttpServletResponse.SC_OK);
         }
-		private String makeResultItem(Document doc){
+		@SuppressWarnings("unchecked")
+		private JSONObject makeResultItem(Document doc){
 			switch (doc.get("type")){
 			case "twitter":{
-				StringBuilder sb = new StringBuilder();
-				sb.append("<div class='result twitter'>");
-				sb.append("<a class='doc-path' href='" + doc.get("link") + "' target='_blank'>" + doc.get("linkText") + "</a>");
-				sb.append("<div class='doc-modified'>" + doc.get("date") + "</div>");
-				sb.append("<div class='doc-content'>" + doc.get("shortDecr") + "</div>");
-				sb.append("</div>");
-				return sb.toString();
+				JSONObject wrapper = new JSONObject();
+				JSONObject content = new JSONObject();
+				
+				content.put("link", doc.get("link").toString());
+				content.put("linkText", doc.get("linkText").toString());
+				content.put("date", doc.get("date"));
+				content.put("shortDecr", doc.get("shortDecr").toString());
+				
+				wrapper.put("twitter", content);
+				
+				return wrapper;
 			}
 			case "reddit":{
-				StringBuilder sb = new StringBuilder();
-				sb.append("<div class='result reddit'>");
-				sb.append("<a class='doc-path' href='" + doc.get("link") + "' target='_blank'>" + doc.get("linkText") + "</a>");
-				sb.append("<div class='doc-modified'>" + doc.get("date") + "</div>");
-				sb.append("<div class='doc-subreddit'>Subreddit: " + doc.get("subreddit") + "</div>");
-				sb.append("<a class='doc-comments' href='" + doc.get("clink") + "' target='_blank'>comments</a>");
-				sb.append("</div>");
-				return sb.toString();
+				JSONObject reddit = new JSONObject();
+				JSONObject content = new JSONObject();
+				
+				content.put("link", doc.get("link").toString());
+				content.put("linkText", doc.get("linkText").toString());
+				content.put("date", doc.get("date"));
+				content.put("subreddit", doc.get("subreddit").toString());
+				content.put("clink", doc.get("clink").toString());
+				
+				reddit.put("reddit", content);
+				
+				return reddit;
 			}
 			case "rssfeed":{
-				StringBuilder sb = new StringBuilder();
-				sb.append("<div class='result rssfeed'>");
-				sb.append("<a class='doc-path' href='" + doc.get("link") + "' target='_blank'>" + doc.get("title") + "</a>");
-				sb.append("<div class='doc-content'>" + doc.get("shortDecr") + "</div>");
-				sb.append("<a class='doc-comments' href='" + doc.get("website") + "' target='_blank'>Source: " + doc.get("website") + "</a>");
-				sb.append("</div>");
-				return sb.toString();
+				JSONObject wrapper = new JSONObject();
+				JSONObject content = new JSONObject();
+				
+				content.put("link", doc.get("link").toString());
+				content.put("title", doc.get("title").toString());
+				content.put("website", doc.get("source"));
+				content.put("date", doc.get("date"));
+				content.put("shortDecr", doc.get("shortDecr").toString());
+				
+				wrapper.put("rssfeed", content);
+				
+				return wrapper;
 			}
 			}
 			
-			return " ";
+			return null;
 		}
 	}
 }

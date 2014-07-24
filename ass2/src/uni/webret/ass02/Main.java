@@ -10,10 +10,10 @@ public class Main {
 		RedditUpdater reddit = new RedditUpdater();
 		reddit.start();
 		
-		RSSUpdater rss = new RSSUpdater();
+		YRSSReader rss = new YRSSReader();
 		rss.start();
 
-		Indexer.index();
+//		Indexer.index();
 		
 		try {
 			WebServer.start();

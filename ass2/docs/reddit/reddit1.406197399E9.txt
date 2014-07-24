@@ -1,0 +1,1 @@
+{"reddit":{"clink":"\/r\/Games\/comments\/2bl07j\/gogcom_announce_linux_support_and_linux_game_sale\/","link":"http:\/\/www.gog.com\/news\/gogcom_now_supports_linux","time":1.406197399E9,"title":"GOG.com announce Linux support and Linux game sale","subreddit":"Games"}}

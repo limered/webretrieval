@@ -151,7 +151,9 @@ public class Indexer {
 	        		Field linkTextField = new StringField("linkText", (String)reddit.get("title"), Field.Store.YES);
 	        		doc.add(linkTextField);
 	        		
-	        		Field dateField = new LongField("date", new Double((double) reddit.get("time")).longValue(), Field.Store.YES);
+	        		String date = new Double((double) reddit.get("time")).longValue() + "000";
+	        		
+	        		Field dateField = new LongField("date", new Long(date) , Field.Store.YES);
 	        		doc.add(dateField);
 	        		
 	        		Field searchField = new TextField("contents", new BufferedReader(new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8)));
@@ -169,8 +171,11 @@ public class Indexer {
 	        		Field titleField = new StringField("title", (String)rss.get("title"), Field.Store.YES);
 	        		doc.add(titleField);
 	        		
-	        		Field feedField = new StringField("website", (String)rss.get("website"), Field.Store.YES);
+	        		Field feedField = new StringField("source", (String)rss.get("source"), Field.Store.YES);
 	        		doc.add(feedField);
+	        		
+	        		Field dateField = new LongField("date", (Long)rss.get("date"), Field.Store.YES);
+	        		doc.add(dateField);
 	        		
 	        		String content = (rss.get("text") != null) ? (String)rss.get("text") : "";
 	        		

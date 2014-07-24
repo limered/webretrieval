@@ -1,0 +1,1 @@
+{"reddit":{"clink":"\/r\/gamernews\/comments\/2bgh57\/ea_ceo_announces_that_a_new_peggle_game_is\/","link":"http:\/\/www.polygon.com\/2014\/7\/22\/5927891\/new-peggle-coming-soon-popcap","time":1.40608223E9,"title":"EA CEO announces that a 'new Peggle game' is launching soon on an investor call.","subreddit":"gamernews"}}

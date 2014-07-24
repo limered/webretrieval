@@ -10,7 +10,12 @@
 	height:150px;
 	margin-top:20px; 
 
-	text-align: center;
+	text-align: center; 
+}
+
+#info-area{
+	font-style: bold;
+	font-size: 1.5em;
 }
 
 #search-input{

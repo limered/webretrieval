@@ -1,0 +1,1 @@
+{"reddit":{"clink":"\/r\/Games\/comments\/2bg4c3\/gamasutra_salary_survey_2014\/","link":"http:\/\/www.gamasutra.com\/salarysurvey2014.pdf?elq=8cd62b09e57b4085af1ac9884008617c&amp;elqCampaignId=6431","time":1.406074588E9,"title":"Gamasutra Salary Survey 2014","subreddit":"Games"}}

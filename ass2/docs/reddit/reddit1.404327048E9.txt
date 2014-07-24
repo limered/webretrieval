@@ -1,0 +1,1 @@
+{"reddit":{"clink":"\/r\/WebGames\/comments\/29o7x1\/space_lich_omega_incremental_game_inspired_by\/","link":"http:\/\/spacelichomega.zertukis.com\/","time":1.404327048E9,"title":"Space Lich Omega, incremental game inspired by Candybox (x-post \/r\/incremental_games)","subreddit":"WebGames"}}

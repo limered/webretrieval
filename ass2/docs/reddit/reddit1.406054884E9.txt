@@ -1,0 +1,1 @@
+{"reddit":{"clink":"\/r\/gamernews\/comments\/2bf3x1\/the_first_wing_of_the_hearthstone_single_player\/","link":"http:\/\/us.blizzard.com\/en-us\/company\/press\/pressreleases.html?id=14905497","time":1.406054884E9,"title":"The first wing of the Hearthstone single player expansion, Curse of Naxxramas, is now live (and free for a limited time)","subreddit":"gamernews"}}

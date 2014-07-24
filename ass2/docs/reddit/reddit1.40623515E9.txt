@@ -1,0 +1,1 @@
+{"reddit":{"clink":"\/r\/WebGames\/comments\/2bmouy\/minimalist_alternative_to_willyoupressthebutton\/","link":"http:\/\/willyouaccept.com\/","time":1.40623515E9,"title":"Minimalist alternative to WillYouPressTheButton","subreddit":"WebGames"}}
