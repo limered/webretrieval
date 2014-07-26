@@ -1,0 +1,1 @@
+{"tweet":{"id":492741874948780033,"time":1406313792000,"user":"CollegeHumor","content":"RT @rickyvanveen: Unexpected summer trend: Kids at pools are now playing Marco Polo, same rules, but with \"Jason Derulo.\""}}

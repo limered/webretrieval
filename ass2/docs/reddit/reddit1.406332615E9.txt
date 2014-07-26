@@ -1,0 +1,1 @@
+{"reddit":{"clink":"\/r\/gamingpc\/comments\/2bqm7j\/isthere_anything_i_can_do_to_my_shit_computer_to\/","link":"http:\/\/www.reddit.com\/r\/gamingpc\/comments\/2bqm7j\/isthere_anything_i_can_do_to_my_shit_computer_to\/","time":1.406332615E9,"title":"Isthere anything I can do to my shit computer to get a higher fps?","subreddit":"gamingpc"}}

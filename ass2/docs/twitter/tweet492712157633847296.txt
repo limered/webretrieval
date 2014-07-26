@@ -1,0 +1,1 @@
+{"tweet":{"id":492712157633847296,"time":1406306707000,"user":"CollegeHumor","content":"RT @Adam_Newman: I don't know what \"shower gel\" is supposed to do, so I'll just assume it's like L.A. Looks, but for your pubes."}}

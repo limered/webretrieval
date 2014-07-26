@@ -12,6 +12,7 @@ import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.index.DirectoryReader;
 import org.apache.lucene.index.IndexReader;
+import org.apache.lucene.queryparser.classic.MultiFieldQueryParser;
 import org.apache.lucene.queryparser.classic.QueryParser;
 import org.apache.lucene.search.IndexSearcher;
 import org.apache.lucene.search.Query;
@@ -23,8 +24,16 @@ import org.apache.lucene.util.Version;
 public class Searcher {
 	static String index = "index";
 	static String field = "contents";
+	static String dateField = "date";
+	static String typeField = "type";
 	
+	static String[] fields = new String[3];
+
 	public static Vector<Document> search(String searchTerm) throws Exception{
+		
+		fields[0] = "contents";
+		fields[1] = "date";
+		fields[2] = "type";
 		
 		IndexReader reader = DirectoryReader.open(FSDirectory.open(new File(index)));
 		IndexSearcher searcher = new IndexSearcher(reader);
@@ -33,7 +42,8 @@ public class Searcher {
 		
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in, StandardCharsets.UTF_8));
 		
-		QueryParser parser = new QueryParser(Version.LUCENE_4_9, field, analyzer);
+		QueryParser parser = new MultiFieldQueryParser(Version.LUCENE_4_9, fields, analyzer);
+//		QueryParser parser = new QueryParser(Version.LUCENE_4_9, field, analyzer);
 
 		Query query = parser.parse(searchTerm);
 						

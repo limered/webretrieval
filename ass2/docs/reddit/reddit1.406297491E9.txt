@@ -1,0 +1,1 @@
+{"reddit":{"clink":"\/r\/gaming\/comments\/2boy35\/gog_releases_50_classic_games_for_linux_os_before\/","link":"http:\/\/www.gog.com\/news\/gogcom_now_supports_linux","time":1.406297491E9,"title":"GOG releases 50 classic games for Linux OS before scheduled release in autumn of 2014. Sale on now.","subreddit":"gaming"}}

@@ -1,0 +1,1 @@
+{"reddit":{"clink":"\/r\/Games\/comments\/2bqo4q\/gogcom_accidentally_gives_away_thousands_of_games\/","link":"http:\/\/www.polygon.com\/2014\/7\/25\/5937709\/gog-com-linux-free","time":1.406333935E9,"title":"GOG.com accidentally gives away thousands of games.","subreddit":"Games"}}

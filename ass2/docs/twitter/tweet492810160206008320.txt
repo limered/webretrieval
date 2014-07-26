@@ -1,0 +1,1 @@
+{"tweet":{"id":492810160206008320,"time":1406330072000,"user":"CollegeHumor","content":"RT @CH_Classics: The 7 Emails You're Ignoring in Your Inbox http:\/\/t.co\/aeb2tSsRSp"}}

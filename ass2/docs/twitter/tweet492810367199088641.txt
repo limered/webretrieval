@@ -1,0 +1,1 @@
+{"tweet":{"id":492810367199088641,"time":1406330122000,"user":"CollegeHumor","content":"RT @DanHopp: \"Aye carumba! FXX to stream all Simpsons episodes! Don't have a cow viewers! Or eat your shorts! NOT d'oh! Mmmm Episodes! Lisa\u2026"}}

@@ -1,0 +1,1 @@
+{"reddit":{"clink":"\/r\/gamingpc\/comments\/2bno26\/kraken_g10_with_gelid_vrm_and_copper_vram\/","link":"http:\/\/imgur.com\/a\/25DU5","time":1.406256153E9,"title":"Kraken G10 with gelid vrm and copper vram heatsinks on an r9-290 summer ready.","subreddit":"gamingpc"}}

@@ -1,0 +1,1 @@
+{"reddit":{"clink":"\/r\/gamingpc\/comments\/2bqvov\/my_radeon_7870_is_reaching_140_farenheit\/","link":"http:\/\/www.reddit.com\/r\/gamingpc\/comments\/2bqvov\/my_radeon_7870_is_reaching_140_farenheit\/","time":1.406339322E9,"title":"My Radeon 7870 is reaching 140° farenheit","subreddit":"gamingpc"}}

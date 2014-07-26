@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URL;
 import java.net.URLDecoder;
+import java.util.Map;
 import java.util.Vector;
 
 import javax.servlet.ServletException;
@@ -42,6 +43,7 @@ public class WebServer {
 		@Override
         protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
         {
+			Map<String, String[]> parameters = request.getParameterMap();
 			String inStr = request.getQueryString();
 			inStr = URLDecoder.decode(inStr, "UTF-8");
 			Vector<Document> result = null;

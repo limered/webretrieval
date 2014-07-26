@@ -1,0 +1,1 @@
+{"tweet":{"id":492712242107125760,"time":1406306727000,"user":"CollegeHumor","content":"RT @streetseidell: I should get a discount on my taxes every time a cop writes me a ticket. I shouldn\u2019t have to pay them twice, right?"}}

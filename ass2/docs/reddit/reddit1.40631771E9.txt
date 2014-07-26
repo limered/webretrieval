@@ -1,0 +1,1 @@
+{"reddit":{"clink":"\/r\/Games\/comments\/2bpxsl\/game_developers_speak_their_minds_as_part_of\/","link":"http:\/\/gamasutra.com\/view\/news\/221907\/Game_developers_speak_their_minds_as_part_of_our_2014_Salary_Survey.php","time":1.40631771E9,"title":"Game developers speak their minds as part of Gamasutra's 2014 Salary Survey","subreddit":"Games"}}

@@ -1,0 +1,1 @@
+{"tweet":{"id":492749357519613952,"time":1406315576000,"user":"Kappische","content":"Only 70% to download on the destiny beta..."}}
