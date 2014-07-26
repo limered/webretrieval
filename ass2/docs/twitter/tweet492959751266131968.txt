@@ -1,0 +1,1 @@
+{"tweet":{"id":492959751266131968,"time":1406365738000,"user":"jeb_","content":"Second day in Helsinki with @242_girl. The availability of free wifi here is amazing :) #SuomiRules"}}

@@ -30,7 +30,7 @@ public class WebServer {
 		WebAppContext webApp = new WebAppContext(warUrlString, "");
 		server.setHandler(webApp);
 		
-		webApp.addServlet(HelloServlet.class, "/html/q");
+		webApp.addServlet(HelloServlet.class, "/html/search");
 		
 		server.start();
         server.join();
@@ -44,11 +44,22 @@ public class WebServer {
         protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
         {
 			Map<String, String[]> parameters = request.getParameterMap();
+			String[] querys = parameters.get("q")[0].split(" ");
+			String[] filters = parameters.get("filter");
+			boolean sorts = (parameters.get("sort") != null);
+			
+			StringBuilder query = new StringBuilder();
+			for (String s : querys){
+				if(s.contains("contents:")||s.contains("type:")||s.contains("date:"))
+					query.append(s + " ");
+				else
+					query.append("contents:" + s + " ");
+			}
 			String inStr = request.getQueryString();
 			inStr = URLDecoder.decode(inStr, "UTF-8");
 			Vector<Document> result = null;
 			try {
-				 result = Searcher.search(inStr);
+				 result = Searcher.search(query.toString(), filters, sorts);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -108,6 +119,20 @@ public class WebServer {
 				return reddit;
 			}
 			case "rssfeed":{
+				JSONObject wrapper = new JSONObject();
+				JSONObject content = new JSONObject();
+				
+				content.put("link", doc.get("link").toString());
+				content.put("title", doc.get("title").toString());
+				content.put("website", doc.get("source"));
+				content.put("date", doc.get("date"));
+				content.put("shortDecr", doc.get("shortDecr").toString());
+				
+				wrapper.put("rssfeed", content);
+				
+				return wrapper;
+			}
+			case "youtube":{
 				JSONObject wrapper = new JSONObject();
 				JSONObject content = new JSONObject();
 				

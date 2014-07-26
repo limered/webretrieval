@@ -6,7 +6,7 @@ a:hover{
 	position: absolute;
 	top:0; bottom:0; left:0; right:0;
 	margin: auto;
-	width: 1200px;
+	width: 1000px;
 	height: 100%;
 }
 
@@ -23,12 +23,12 @@ a:hover{
 }
 
 #search-input{
+	display:inline-block;
 	width:500px;
 	height: 30px;
 }
 #search-button{
-	/* position: absolute;
-	right: 0; */
+	display:inline-block;
 	width:100px;
 	height:30px;
 	
@@ -38,7 +38,7 @@ a:hover{
 
 #result-area{
 	position:absolute;
-	height:calc(100% - 200px);
+	height:calc(100% - 250px);
 	
 	bottom:0;
 }

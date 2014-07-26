@@ -12,6 +12,9 @@ public class Main {
 		
 		YRSSReader rss = new YRSSReader();
 		rss.start();
+		
+		YouTubeUpdater youtube = new YouTubeUpdater();
+		youtube.start();
 
 //		Indexer.index();
 		

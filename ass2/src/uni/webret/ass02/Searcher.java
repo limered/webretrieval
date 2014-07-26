@@ -14,12 +14,19 @@ import org.apache.lucene.index.DirectoryReader;
 import org.apache.lucene.index.IndexReader;
 import org.apache.lucene.queryparser.classic.MultiFieldQueryParser;
 import org.apache.lucene.queryparser.classic.QueryParser;
+import org.apache.lucene.search.FieldCacheTermsFilter;
+import org.apache.lucene.search.FieldValueFilter;
+import org.apache.lucene.search.Filter;
 import org.apache.lucene.search.IndexSearcher;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.ScoreDoc;
+import org.apache.lucene.search.SortField;
 import org.apache.lucene.search.TopDocs;
+import org.apache.lucene.search.TopFieldDocs;
 import org.apache.lucene.store.FSDirectory;
 import org.apache.lucene.util.Version;
+import org.apache.lucene.search.Sort;
+
 
 public class Searcher {
 	static String index = "index";
@@ -29,7 +36,7 @@ public class Searcher {
 	
 	static String[] fields = new String[3];
 
-	public static Vector<Document> search(String searchTerm) throws Exception{
+	public static Vector<Document> search(String searchTerm, String[] filters, boolean sorts) throws Exception{
 		
 		fields[0] = "contents";
 		fields[1] = "date";
@@ -46,8 +53,23 @@ public class Searcher {
 //		QueryParser parser = new QueryParser(Version.LUCENE_4_9, field, analyzer);
 
 		Query query = parser.parse(searchTerm);
-						
-		Vector<Document> docs = doPagingSearch(in, searcher, query, 100, false, false);
+		
+//		System.out.println(query.toString());
+		
+		Sort sorter = null;
+		if(sorts)
+			sorter = new Sort(new SortField("date", SortField.Type.LONG, true));
+		
+		Filter filter = null;
+		if(filters != null && filters.length > 0){
+			StringBuilder filterString = new StringBuilder();
+			for (String s : filters){
+				filterString.append(s + " ");
+			}
+			filter = new FieldCacheTermsFilter("type", filters);
+		}
+		
+		Vector<Document> docs = doPagingSearch(in, searcher, query, 100, sorter, filter);
 		
 		reader.close();
 		
@@ -55,11 +77,22 @@ public class Searcher {
 	}
 	
 	public static Vector<Document> doPagingSearch(BufferedReader in, IndexSearcher searcher, Query query, 
-			int hitsPerPage, boolean raw, boolean interactive) throws IOException{
+			int hitsPerPage, Sort sorter, Filter filter) throws IOException{
 		
 		Vector<Document> result = new Vector<Document>();
 		
-		TopDocs results = searcher.search(query, 5 * hitsPerPage);
+		TopDocs results = null;
+		
+		if(sorter != null && filter != null){
+			results = searcher.search(query, filter, hitsPerPage, sorter, true, true);
+		}else if (sorter != null && filter == null){
+			results = searcher.search(query, hitsPerPage, sorter);
+		}else if (sorter == null && filter != null){
+			results = searcher.search(query, filter, hitsPerPage);
+		}else{
+			results = searcher.search(query, hitsPerPage);
+		}
+		
 		ScoreDoc[] hits = results.scoreDocs;
 		
 		int nuTotalHits = results.totalHits;

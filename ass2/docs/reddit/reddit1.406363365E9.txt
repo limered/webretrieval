@@ -1,0 +1,1 @@
+{"reddit":{"clink":"\/r\/Games\/comments\/2brmij\/when_too_much_is_not_enough_crowdfunding_has\/","link":"http:\/\/www.eurogamer.net\/articles\/2014-07-26-when-too-much-is-not-enough","time":1.406363365E9,"title":"When too much is not enough: crowdfunding has freed developers from old production models, but at what cost?","subreddit":"Games"}}

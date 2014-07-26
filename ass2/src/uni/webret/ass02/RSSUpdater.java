@@ -15,7 +15,7 @@ public class RSSUpdater extends Thread {
 	static boolean running = true;
 	static int sleeptime = 5 * 60 * 1000;
 	
-	static String urlList[] = new String[11];
+	static String urlList[] = new String[12];
 	
 	public RSSUpdater() {
 		urlList[0] = "http://www.gamespot.com/feeds/reviews/";
@@ -29,6 +29,16 @@ public class RSSUpdater extends Thread {
 		urlList[8] = "http://www.polygon.com/rss/index.xml";
 		urlList[9] = "http://www.joystiq.com/tag/@news/rss.xml";
 		urlList[10] = "http://www.joystiq.com/tag/@reviews/rss.xml";
+		/*Youtube Stuff*/
+		urlList[11] = "http://gdata.youtube.com/feeds/base/users/Machinima/uploads&max-results=50&search_sort=video_date_uploaded";
+//		urlList[11] = "http://gdata.youtube.com/feeds/base/users/TotalHalibut/uploads&max-results=50&search_sort=video_date_uploaded";
+//		urlList[11] = "http://gdata.youtube.com/feeds/videos?q=gaming&max-results=50&search_sort=video_date_uploaded";
+//		urlList[11] = "http://gdata.youtube.com/feeds/videos?q=gaming&start-index=51&max-results=50&search_sort=video_date_uploaded";
+//		urlList[11] = "http://gdata.youtube.com/feeds/videos?q=game%20review&max-results=50&search_sort=video_date_uploaded";
+//		urlList[11] = "http://gdata.youtube.com/feeds/videos?q=game%20review&start-index=51&max-results=50&search_sort=video_date_uploaded";
+//		urlList[11] = "http://gdata.youtube.com/feeds/videos?q=game%20review&start-index=101&max-results=50&search_sort=video_date_uploaded";
+//		urlList[11] = "http://gdata.youtube.com/feeds/videos?q=game%20review%20gamestar&max-results=50&search_sort=video_date_uploaded";
+
 	}
 	
 	@SuppressWarnings("unchecked")

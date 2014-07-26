@@ -158,11 +158,37 @@ public class Indexer {
 	        		
 	        		Field searchField = new TextField("contents", new BufferedReader(new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8)));
 	        		doc.add(searchField);
-	        	}else{
+	        	}else if (jso.get("rssfeed") != null){
 	        		//rss file
 	        		JSONObject rss = (JSONObject)jso.get("rssfeed");
 	        		
 	        		Field typeField = new StringField("type", "rssfeed", Field.Store.YES);
+	        		doc.add(typeField);
+	        		
+	        		Field linkField = new StringField("link", (String)rss.get("link"), Field.Store.YES);
+	        		doc.add(linkField);
+	        		
+	        		Field titleField = new StringField("title", (String)rss.get("title"), Field.Store.YES);
+	        		doc.add(titleField);
+	        		
+	        		Field feedField = new StringField("source", (String)rss.get("source"), Field.Store.YES);
+	        		doc.add(feedField);
+	        		
+	        		Field dateField = new LongField("date", (Long)rss.get("date"), Field.Store.YES);
+	        		doc.add(dateField);
+	        		
+	        		String content = (rss.get("text") != null) ? (String)rss.get("text") : "";
+	        		
+	        		Field shortDesField = new StringField("shortDecr", (content.length() > 300) ? content.substring(0, 300) + "..." : content, Field.Store.YES);
+	        		doc.add(shortDesField);
+	        		
+	        		Field searchField = new TextField("contents", new BufferedReader(new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8)));
+	        		doc.add(searchField);
+	        	}else if (jso.get("youtube") != null){
+	        		//Youtube
+	        		JSONObject rss = (JSONObject)jso.get("youtube");
+	        		
+	        		Field typeField = new StringField("type", "youtube", Field.Store.YES);
 	        		doc.add(typeField);
 	        		
 	        		Field linkField = new StringField("link", (String)rss.get("link"), Field.Store.YES);

@@ -48,13 +48,19 @@ public class YRSSReader extends Thread {
 			
 			List<ItemEntry> items = feed.getItems();
 			
-			if(items.size() == 0){
+			if(items == null || items.size() == 0){
 				return;
 			}
 			for (ItemEntry item : items){
 				String pub = item.getPubDate() != null ? item.getPubDate() : feed.getLastBuildOrUpdatedDate();
-				pub = pub.substring(5, 25);
-				DateFormat formatter = new SimpleDateFormat("dd MMM yyyy HH:mm:ss");
+				
+				DateFormat formatter = null;
+				if(pub.contains("Z")){
+					formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+				}else{
+					pub = pub.substring(5, 25);
+					formatter = new SimpleDateFormat("dd MMM yyyy HH:mm:ss");
+				}
 				Date tdate;
 				try {
 					tdate = (Date)formatter.parse(pub);

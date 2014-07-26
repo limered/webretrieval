@@ -1,10 +1,35 @@
 (function(WinJS){
 	var resultList = {};
-	function search(evt){
-		var searchString = encodeURI($('#search-input').val());
+	function search2(evt){
+		evt.preventDefault();
+		search();
+	}
+	
+	function search(evt){ 
 		
-		var baseURL = "/html/q";
-		var ajaxUrl = baseURL + "?" + searchString;
+		var searchString = encodeURI($('#search-input').val());
+		if(searchString === "")
+			return;
+		var baseURL = "/html/search"; 
+		var ajaxUrl = baseURL + "?q=" + searchString;
+		
+		var sortCh = $('#newest-first-checkbox')[0].checked;
+		var redditCh = $('#only-reddit-checkbox')[0].checked;
+		var twitterCh = $('#only-twitter-checkbox')[0].checked;
+		var rssCh = $('#only-rss-checkbox')[0].checked;
+		var youCh = $('#only-youtube-checkbox')[0].checked;
+		
+		var sortUrl = (sortCh) ? "&sort=true" : "";
+		
+		var filterUrl = (redditCh || twitterCh || rssCh || youCh) 
+		? "&filter=" + 
+				((redditCh) ? "reddit " : "") + 
+				((twitterCh) ? "twitter " : "") +
+				((youCh) ? "youtube " : "") +
+				((rssCh) ? "rssfeed " : "") : "";
+		
+		ajaxUrl += sortUrl + filterUrl;
+		
 		$('#info-area').html("");
 		WinJS.xhr({url: ajaxUrl, type:"GET"}).then(function(res){
 			resultList.splice(0, resultList.length);
@@ -19,8 +44,6 @@
 		});
 	}
 
-	
-	
 	function showNoResultsMessage(query){
 		var text = "Sorry, there are no results for: " + query;
 		$('#info-area').html(text);
@@ -38,7 +61,12 @@
 	}
 	
 	WinJS.UI.processAll().then(function(){
-		$('#search-button').click(search);
+		$('#search-button').click(search2);
+		$('#newest-first-checkbox').click(search);
+		$('#only-reddit-checkbox').click(search);
+		$('#only-twitter-checkbox').click(search);
+		$('#only-rss-checkbox').click(search);
+		$('#only-youtube-checkbox').click(search);
 		 
 		function resultItemTemplate(itemPromise){
 			return itemPromise.then(function(item){

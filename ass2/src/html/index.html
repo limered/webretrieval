@@ -5,7 +5,6 @@
 		<link rel="stylesheet" type="text/css" href="css/ui-light.css" />
 
 		<script type="text/javascript" src="js/base.js"></script>
-		<!-- <script type="text/javascript" src="js/WinJS.js"></script> -->
 		<script type="text/javascript" src="js/ui.js"></script>
 		<script type="text/javascript" src="js/en-US/base.strings.js"></script> 
 		<script type="text/javascript" src="js/en-US/ui.strings.js"></script> 
@@ -17,11 +16,17 @@
 		<div id="container">
 			<div id="search-area">
 				<h1>Welcome to Moooogle</h1>
-				<input id="search-input" type="text" ></input><br/>
-				<button id="search-button" type="submit">Search</button>
-				<!-- <div id="advanced-search-area">
+				<form> 
+					<input id="search-input" type="text" ></input>
+					<button id="search-button" type="submit">Search</button>
+				</form>
+				<div id="advanced-search-area">
 					<input type="checkbox" id="newest-first-checkbox" /> Newest First
-				</div> -->
+					<input type="checkbox" id="only-reddit-checkbox" /> Only Reddit
+					<input type="checkbox" id="only-twitter-checkbox" /> Only Twitter
+					<input type="checkbox" id="only-rss-checkbox" /> Only RSS
+					<input type="checkbox" id="only-youtube-checkbox" /> Only Youtube
+				</div>
 			</div>
 			<div id="info-area"></div>
 			<div id="result-area" data-win-control="WinJS.UI.ListView"></div>

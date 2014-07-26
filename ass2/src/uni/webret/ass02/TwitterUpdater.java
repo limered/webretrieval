@@ -38,7 +38,13 @@ public class TwitterUpdater extends Thread{
 				try{
 					stati = twitter.getHomeTimeline(new Paging(i));
 				}catch (TwitterException e){
+					try {
+						sleep(updateTime);
+					} catch (InterruptedException e1) {
+						e1.printStackTrace();
+					}
 					e.printStackTrace();
+					continue;
 				}
 				for (Status st : stati){
 					JSONObject tweet = new JSONObject();
@@ -65,8 +71,9 @@ public class TwitterUpdater extends Thread{
 				Indexer.index();
 				System.out.println("Twitter indexing done...sleeping");
 				sleep(updateTime);
-			}catch (InterruptedException e){
+			}catch (Exception e){
 				e.printStackTrace();
+				
 			}
 		}
 	}

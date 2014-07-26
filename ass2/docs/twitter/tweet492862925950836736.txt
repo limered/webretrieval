@@ -1,0 +1,1 @@
+{"tweet":{"id":492862925950836736,"time":1406342653000,"user":"PhillyD","content":"Suns out. Guns out. http:\/\/t.co\/9Puy72y28Y"}}
